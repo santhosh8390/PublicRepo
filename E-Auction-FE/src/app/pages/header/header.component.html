@@ -1,0 +1,16 @@
+<!-- should have a navbar with search bar, Register, Login, Home, Products dropdown, Cart, Account -->
+<!-- Login, Register should be modal with email, password and email, password, confirm password as inputs respectively and inputs should be validated -->
+<!-- Products, Account, Home,SignOut tabs should be available only after successful login and Login and Register should not be present after successful login-->
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/images/logo.webp" height="40" width="40">
+  </a>
+  
+  <div class="collapse navbar-collapse mt-2">
+    <h5 style="color:powderblue;font-family:Arial, Helvetica, sans-serif">E-AUCTION</h5>
+  </div>
+  <div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-primary" (click)="fetchDetails()" type="button">Fetch Details</button>
+  </div>
+</nav>
