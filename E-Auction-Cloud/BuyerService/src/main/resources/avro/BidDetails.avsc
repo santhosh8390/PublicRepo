@@ -1,0 +1,61 @@
+{
+  "namespace": "com.iiht.fse.BuyerService.avro",
+  "type": "record",
+  "name": "BidDetails",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "productId",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "firstName",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "city",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "state",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "pin",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+     {
+      "name": "phone",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+     {
+      "name": "bidAmount",
+      "type": "long"
+    }
+  ]
+}
