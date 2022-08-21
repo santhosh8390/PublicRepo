@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -32,6 +33,9 @@ public class SellerServiceUtil {
         sellerResponse.setStatusMessage(HttpStatus.OK.name());
         sellerResponse.setMessage(message);
         sellerResponse.setSellerInfo(sellerInfo);
+        if(null != sellerInfo && !sellerInfo.getProducts().isEmpty()) {
+            sellerResponse.setProducts(sellerInfo.getProducts().stream().map(product -> product.getId() + "," + product.getName()).collect(Collectors.toList()));
+        }
         return sellerResponse;
     }
 

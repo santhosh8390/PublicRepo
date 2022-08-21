@@ -21,6 +21,10 @@ public class ProductBids {
 
     private BigDecimal bidAmount;
 
+    private String email;
+
+    private String phone;
+
     public String getProductId() {
         return productId;
     }
@@ -53,6 +57,14 @@ public class ProductBids {
         return bidAmount;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public static final class ProductBidsMapper {
 
         private String productId;
@@ -70,6 +82,10 @@ public class ProductBids {
         private Date bidEndDate;
 
         private BigDecimal bidAmount;
+
+        private String email;
+
+        private String phone;
 
         private ProductBidsMapper() {
 
@@ -119,6 +135,16 @@ public class ProductBids {
             return this;
         }
 
+        public ProductBidsMapper setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public ProductBidsMapper setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
         public ProductBids build() {
             ProductBids productBids = new ProductBids();
             productBids.productId = this.productId;
@@ -129,6 +155,8 @@ public class ProductBids {
             productBids.startingPrice = this.startingPrice;
             productBids.bidEndDate = this.bidEndDate;
             productBids.bidAmount = this.bidAmount;
+            productBids.email = this.email;
+            productBids.phone = this.phone;
             return productBids;
         }
 

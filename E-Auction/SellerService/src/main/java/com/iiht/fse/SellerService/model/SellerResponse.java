@@ -22,4 +22,5 @@ public class SellerResponse {
     SellerInfo sellerInfo;
     List<SellerErrorResponse> errors;
     List<ProductBids> productBids;
+    List<String> products;
 }

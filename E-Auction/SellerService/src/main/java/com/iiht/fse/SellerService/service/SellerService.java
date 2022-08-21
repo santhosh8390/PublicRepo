@@ -15,4 +15,6 @@ public interface SellerService {
     SellerResponse fetchProduct(final String productId);
 
     SellerResponse fetchBids(final String productId);
+
+    SellerResponse fetchAllProducts();
 }

@@ -106,7 +106,9 @@ public class SellerServiceImpl implements SellerService {
                             .setCategory(product.getCategory())
                             .setStartingPrice(product.getStartingPrice())
                             .setBidEndDate(product.getBidEndDate())
-                            .setBidAmount(bid.getBidAmount()).build())
+                            .setBidAmount(bid.getBidAmount())
+                            .setEmail(bid.getEmail())
+                            .setPhone(bid.getPhone()).build())
                     .collect(Collectors.toList());
             Collections.sort(productBids, compareByBidAmount.reversed());
             if (productBids == null || productBids.isEmpty()) {
@@ -115,6 +117,22 @@ public class SellerServiceImpl implements SellerService {
             SellerResponse sellerResponse = SellerServiceUtil.buildSuccessResponse("Bids against the product fetched successfully", null);
             sellerResponse.setProductBids(productBids);
             return sellerResponse;
+        } catch (RuntimeException exception) {
+            throw new SellerSystemException(exception, exception.getMessage());
+        }
+    }
+
+    @Override
+    public SellerResponse fetchAllProducts() {
+        try {
+            List<SellerInfo> sellerInfoList = sellerRepository.findAll();
+            SellerInfo sellerInfo = new SellerInfo();
+            List<Product> products = new ArrayList();
+            for(SellerInfo seller : sellerInfoList) {
+                products.addAll(seller.getProducts());
+            }
+            sellerInfo.setProducts(products);
+            return SellerServiceUtil.buildSuccessResponse("product Details fetched successfully", sellerInfo);
         } catch (RuntimeException exception) {
             throw new SellerSystemException(exception, exception.getMessage());
         }

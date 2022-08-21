@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(value = "SELLERSERVICE", url = "http://localhost:8080/")
+@FeignClient(name="SellerService", url = "https://xwvm7xjpaj.execute-api.us-west-1.amazonaws.com/dev")
 public interface SellerServiceProxy {
 
     @GetMapping(path= "/e-auction/api/v1/seller/{productId}")

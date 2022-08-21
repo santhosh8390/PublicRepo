@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/e-auction/api/v1/seller")
@@ -31,6 +32,11 @@ public class SellerController {
     @GetMapping(path= "/{productId}")
     public ResponseEntity<SellerResponse> fetchProductDetails(@PathVariable("productId") final String productId) {
         return ResponseEntity.ok(sellerService.fetchProduct(productId));
+    }
+
+    @GetMapping(path= "/products")
+    public ResponseEntity<SellerResponse> fetchAllProducts() {
+        return ResponseEntity.ok(sellerService.fetchAllProducts());
     }
 
     @DeleteMapping(path= "/delete/{productId}")

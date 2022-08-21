@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name="BuyerService", url = "https://ygvkus2v15.execute-api.us-west-1.amazonaws.com/default/e-auction-fetch_bids")
+@FeignClient(name="BuyerService", url = "https://5qloikojgd.execute-api.ap-south-1.amazonaws.com/sit/fetchProduct")
 public interface BuyerServiceProxy {
 
     @GetMapping

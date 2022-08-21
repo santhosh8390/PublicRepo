@@ -22,8 +22,7 @@ export class SellerService {
   }
 
   getBidDetails(productId: string): Observable<SellerResponse> {
-    const headers = {'content-type': 'application/json'}
-    return this.http.get<SellerResponse>(environment.API_URL+ 'show-bids/' + productId, { 'headers': headers })
+    return this.http.get<SellerResponse>(environment.API_URL+ 'show-bids/' + productId)
     .pipe(catchError(this.errorHandler.handleError));
   }
 }
